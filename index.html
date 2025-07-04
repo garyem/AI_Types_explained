@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narrow AI vs General AI</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #2d5016 0%, #1a1a1a 100%);
+            margin: 0;
+            padding: 10px;
+            min-height: 100vh;
+            font-size: 16px;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            background: #f8f8f8;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            border: 2px solid #ffd700;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1a1a1a;
+            font-size: 1.8em;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(255,215,0,0.3);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #2d5016;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+        
+        /* Mobile-first responsive table */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9em;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            min-width: 300px;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #1a1a1a;
+            padding: 12px 8px;
+            text-align: center;
+            font-size: 1em;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            border: 1px solid #1a1a1a;
+        }
+        
+        td {
+            padding: 12px 8px;
+            text-align: center;
+            border: 1px solid #1a1a1a;
+            vertical-align: top;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+        
+        .narrow-col {
+            background: linear-gradient(135deg, #90ee90, #98fb98);
+            color: #1a1a1a;
+        }
+        
+        .general-col {
+            background: linear-gradient(135deg, #90ee90, #98fb98);
+            color: #1a1a1a;
+        }
+        
+        .category {
+            font-weight: bold;
+            background: linear-gradient(135deg, #1a1a1a, #333333);
+            color: #ffd700;
+            font-size: 0.9em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            width: 25%;
+            min-width: 80px;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+        
+        .fun-fact {
+            background: linear-gradient(135deg, #2d5016, #1a1a1a);
+            color: #ffd700;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1em;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            border: 2px solid #ffd700;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #1a1a1a;
+            padding: 3px 6px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 2px;
+        }
+        
+        /* Tablet styles */
+        @media (min-width: 768px) {
+            .container {
+                padding: 25px;
+                max-width: 900px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .subtitle {
+                font-size: 1.1em;
+            }
+            
+            table {
+                font-size: 1em;
+            }
+            
+            th {
+                padding: 15px;
+                font-size: 1.1em;
+            }
+            
+            td {
+                padding: 15px;
+            }
+            
+            .category {
+                font-size: 1em;
+            }
+            
+            .emoji {
+                font-size: 1.3em;
+            }
+            
+            .fun-fact {
+                font-size: 1.1em;
+                padding: 18px;
+            }
+        }
+        
+        /* Desktop styles */
+        @media (min-width: 1024px) {
+            body {
+                padding: 20px;
+            }
+            
+            .container {
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .subtitle {
+                font-size: 1.2em;
+            }
+            
+            table {
+                font-size: 1.1em;
+            }
+            
+            th {
+                padding: 20px;
+                font-size: 1.3em;
+            }
+            
+            td {
+                padding: 20px;
+            }
+            
+            .category {
+                font-size: 1.1em;
+            }
+            
+            .emoji {
+                font-size: 1.5em;
+                margin-right: 10px;
+            }
+            
+            .fun-fact {
+                font-size: 1.2em;
+                padding: 20px;
+            }
+        }
+        
+        /* Very small screens */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            .subtitle {
+                font-size: 0.9em;
+            }
+            
+            table {
+                font-size: 0.8em;
+            }
+            
+            th, td {
+                padding: 8px 4px;
+            }
+            
+            .emoji {
+                font-size: 1em;
+                margin-right: 3px;
+            }
+            
+            .fun-fact {
+                font-size: 0.9em;
+                padding: 12px;
+            }
+            
+            .highlight {
+                padding: 2px 4px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 AI Types Explained!</h1>
+        <p class="subtitle">A Simple Guide for Anyone</p>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>What is it?</th>
+                        <th>Narrow AI (Weak AI)</th>
+                        <th>General AI (Strong AI)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="category">🧠 What it means</td>
+                        <td class="narrow-col">
+                            <span class="emoji">🎯</span>
+                            Super good at <span class="highlight">ONE thing</span>, like a specialist!
+                        </td>
+                        <td class="general-col">
+                            <span class="emoji">🌟</span>
+                            Good at <span class="highlight">EVERYTHING</span>, like a human brain!
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="category">🎮 Examples</td>
+                        <td class="narrow-col">
+                            <span class="emoji">📱</span>
+                            Siri, Alexa, Netflix recommendations, chess computers, photo recognition
+                        </td>
+                        <td class="general-col">
+                            <span class="emoji">🚀</span>
+                            Like a robot friend who can cook, play games, do homework, AND tell jokes!
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="category">🏃‍♂️ What they can do</td>
+                        <td class="narrow-col">
+                            <span class="emoji">🏆</span>
+                            Amazing at their special job, but can't do anything else
+                        </td>
+                        <td class="general-col">
+                            <span class="emoji">🦸</span>
+                            Can learn new things and solve ANY problem, just like you!
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="category">🕐 Do they exist now?</td>
+                        <td class="narrow-col">
+                            <span class="emoji">✅</span>
+                            YES! We use them every day
+                        </td>
+                        <td class="general-col">
+                            <span class="emoji">🔮</span>
+                            NO! Scientists are still trying to build them
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="category">🎭 Like a person who...</td>
+                        <td class="narrow-col">
+                            <span class="emoji">🏐</span>
+                            Is the BEST basketball player ever, but can't ride a bike
+                        </td>
+                        <td class="general-col">
+                            <span class="emoji">🎪</span>
+                            Can play sports, paint, sing, cook, and learn anything new!
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="category">🎯 Think of it as...</td>
+                        <td class="narrow-col">
+                            <span class="emoji">🔧</span>
+                            A super smart tool that does ONE job perfectly
+                        </td>
+                        <td class="general-col">
+                            <span class="emoji">🧙‍♂️</span>
+                            A magical computer friend who thinks like a human
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="fun-fact">
+            <span class="emoji">💡</span>
+            Fun Fact: All the AI we have today is Narrow AI - even the smartest computers can only do specific tasks really well!
+        </div>
+        
+        <div class="fun-fact">
+            <span class="emoji">🤔</span>
+            The AI that talks to you (like me!) is Narrow AI too - I'm really good at talking and answering questions, but I can't drive a car or bake cookies!
+        </div>
+    </div>
+</body>
+</html>
